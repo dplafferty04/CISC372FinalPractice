@@ -2,8 +2,10 @@
 #include <stdlib.h>
 
 // Serial version - runs on CPU
+// this add vectors was changed from serial to parralal
+//rest should still be serial
 __global__ void addVectors(int *a, int *b, int *c, int n) {
-    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    int index = blockIdx.x * blockDim.x + threadIdx.x;
     if (index< n) {//for each element in the array, add the elements
 
         c[index] = a[index] + b[index];//add the elements

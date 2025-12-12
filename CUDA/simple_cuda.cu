@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <cuda_runtime.h>
 
+// this shows the side by side of serial and parrallel versions of the same code using cuda
+//TO-DD
+//Synchronization
+//Matrix multiplication in CUDA
+//Manual reduction algorithms
+//API libraries
+//Multiple dimensions (2D/3D)
+//Limitations of threads within a block
+
+
 // CUDA kernel - runs on GPU
 __global__ void addVectors(int *a, int *b, int *c, int n) {
     int index = blockIdx.x * blockDim.x + threadIdx.x;//index is the global thread index
